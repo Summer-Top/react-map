@@ -1,0 +1,11 @@
+{
+  "name": "React-Map",
+  "version": "0.0.0",
+  "homepage": "",
+  "author": [
+    ""
+  ],
+  "dependencies": {
+    "react-0.11.1.min": "http://fb.me/react-0.11.1.min.js"
+  }
+}
