@@ -6,7 +6,8 @@ define([
 	// Esri Modules
 	"esri/map",
 	// Esri Dijjits
-], function (Evented, declare, Map) {
+	"esri/dijit/Geocoder"
+], function (Evented, declare, Map, Geocoder) {
 	'use strict';
 
 	var _map = declare([Evented], {
@@ -30,17 +31,28 @@ define([
 
 			self.map.on('load', function () {
 				self.map.resize();
-				self.emit('map-ready', {});
+				self.mapLoaded();
+				//self.emit('map-ready', {});
 			});
-
 
 		},
 
 		mapLoaded: function () {
-			
+			this.addWidgets();
 		},
 
 		addWidgets: function () {
+			var self = this,
+					geocoder;
+
+			geocoder = new Geocoder({
+				map: self.map,
+				autoComplete: true,
+      	arcgisGeocoder: {
+      		placeholder: "Enter address or region"
+      	}
+			}, "Geocoder");
+			geocoder.startup();
 
 		},
 

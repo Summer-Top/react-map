@@ -20,16 +20,11 @@
 	      aliases: [
 	      	['react', 'libs/react-0.11.1.min/index']
 	      ],
-	      deps: [
-	      	"main/Main",
+	      deps: [	      	
 	      	"dojo/domReady!"
 	      ],
-	      callback: function (Main) {
-	      	Main.init();
-	      	// Before Running grunt build, remove main/Main from Require above and main parameter
-	        // from callback, then uncomment below
-	        // Release Version
-	        // loadScript('app/js/app.min.js');
+	      callback: function () {
+	      	loadScript('app/js/app.min.js');
 	      }
 			}, // End dojoConfig
 			src = 'http://js.arcgis.com/3.10/',
@@ -40,7 +35,7 @@
 
 	var loadScript = function (src, attrs) {
 		var s = doc.createElement('script'),
-			h = doc.getElementsByTagName('head')[0];
+				h = doc.getElementsByTagName('head')[0];
 		s.src = src;
 		s.async = true;
 		for (var key in attrs) {
@@ -53,16 +48,17 @@
 
 	var loadStyle = function (src, isCDN) {
 		var l = doc.createElement('link'),
-			path = isCDN ? src : src + "?v=" + version,
-			h = doc.getElementsByTagName('head')[0];
-	    l.rel = "stylesheet";
-	    l.type = 'text/css';
-	    l.href = path;
-	    l.media = "only x";
-	    h.appendChild(l);
-	    setTimeout(function () {
-    		l.media = "all";
-    	});
+				path = isCDN ? src : src + "?v=" + version,
+				h = doc.getElementsByTagName('head')[0];
+	    
+	  l.rel = "stylesheet";
+	  l.type = 'text/css';
+	  l.href = path;
+	  l.media = "only x";
+	  h.appendChild(l);
+	  setTimeout(function () {
+    	l.media = "all";
+    });
 	};
 
 	var loadDependencies = function () {
@@ -75,19 +71,19 @@
 	};
 
 	win.requestAnimationFrame = (function() {
-        return win.requestAnimationFrame ||
-            win.webkitRequestAnimationFrame ||
-            win.mozRequestAnimationFrame ||
-            win.oRequestAnimationFrame ||
-            win.msRequestAnimationFrame;
-    })();
+  	return win.requestAnimationFrame ||
+      win.webkitRequestAnimationFrame ||
+      win.mozRequestAnimationFrame ||
+      win.oRequestAnimationFrame ||
+  		win.msRequestAnimationFrame;
+  })();
 
   if (win.requestAnimationFrame) {
-      win.requestAnimationFrame(loadDependencies);
+    win.requestAnimationFrame(loadDependencies);
   } else if (doc.readyState === "loaded") {
-      loadDependencies();
+    loadDependencies();
   } else {
-      win.onload = loadDependencies;
+    win.onload = loadDependencies;
   }
 
 })(window, document);

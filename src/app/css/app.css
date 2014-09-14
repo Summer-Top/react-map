@@ -1,9 +1,9 @@
 
-/* line 6 : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
+/* line 73 : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
 
 /* line 1 : /Users/Robert/Sites/github/react-map/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 73 : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
+/* line undefined : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
 /*  Helpful Functions and Key Variables */
 
 /* line 14 : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
@@ -89,9 +89,27 @@ body {
   font-size: 16px;
 }
 
-/* line 74 : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
+
+/* line 73 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+
+/* line 1 : /Users/Robert/Sites/github/react-map/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
 .map-panel .map {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+/* line 6 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+.map-panel .simpleGeocoder {
+  position: absolute;
+  z-index: 50;
+  left: 20px;
+  top: 20px;
+}
+
+/* line 12 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+.map-panel .esriSimpleSlider {
+  top: 60px;
 }
