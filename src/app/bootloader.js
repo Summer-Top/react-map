@@ -20,11 +20,16 @@
 	      aliases: [
 	      	['react', 'libs/react-0.11.1.min/index']
 	      ],
-	      deps: [	      	
+	      deps: [
+	      	"main/Main",
 	      	"dojo/domReady!"
 	      ],
-	      callback: function () {
-	      	loadScript('app/js/app.min.js');
+	      callback: function (Main) {
+	      	Main.init();
+	      	// Before Running grunt build, remove main/Main from Require above and main parameter
+	        // from callback, then uncomment below
+	        // Release Version
+	        // loadScript('app/js/app.min.js');
 	      }
 			}, // End dojoConfig
 			src = 'http://js.arcgis.com/3.10/',

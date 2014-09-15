@@ -1,13 +1,40 @@
+/*  Helpful Functions and Key Variables */
+border-radius()
+	border-radius arguments
+	-moz-border-radius arguments
+	-webkit-border-radius arguments
+
+// Colors
+mapButtonBorder = #57585A
+
+// Fonts
+whiteFont = #FFF
+
+/*  Helpful Functions and Key Variables */
+
 .map-panel .map
 	position relative
 	height 100%
 	width 100%
 
-.map-panel .simpleGeocoder
-	position absolute
-	z-index 50
-	left 20px
-	top 20px
+.simpleGeocoder
+	margin 20px 0
+
+.simpleGeocoder .esriGeocoderContainer
+	width 100% !important
 
 .map-panel .esriSimpleSlider
 	top 60px
+
+.map-panel .settings-icon
+	background url('images/settings-icon.png') #FFF no-repeat center
+	border 1px solid mapButtonBorder
+	background-size 22px 22px
+	border-radius(5px)
+	position absolute
+	cursor pointer
+	height 30px
+	width 30px
+	z-index 50
+	left 20px
+	top 20px

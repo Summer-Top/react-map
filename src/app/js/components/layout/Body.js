@@ -1,9 +1,8 @@
 /* global define */
 define([
 	"react",
-	"components/layout/Column",
-	"components/layout/MapPanel"
-], function (React, Column, MapPanel) {
+	"components/layout/SlideMenu"
+], function (React, SlideMenu) {
 	'use strict';
 
 	return React.createClass({
@@ -11,10 +10,8 @@ define([
 		render: function () {
 			return (
 				React.DOM.div({'className': 'body'},
-					new Column({
-						'description': this.props.description
-					}),
-					new MapPanel({
+					new SlideMenu({
+						'description': this.props.description,
 						'options': this.props.mapOptions
 					})
 				)

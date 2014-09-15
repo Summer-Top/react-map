@@ -3,7 +3,7 @@
 
 /* line 1 : /Users/Robert/Sites/github/react-map/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line undefined : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
+/* line 73 : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
 /*  Helpful Functions and Key Variables */
 
 /* line 14 : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
@@ -45,8 +45,8 @@ body {
 .column {
   background-color: background-color;
   position: absolute;
-  width: 320px;
   bottom: 0;
+  width: 0;
   left: 0;
   top: 0;
 }
@@ -54,9 +54,9 @@ body {
 /* line 48 : /Users/Robert/Sites/github/react-map/src/app/css/app.styl */
 .map-panel {
   position: absolute;
-  left: 320px;
   bottom: 0;
   right: 0;
+  left: 0;
   top: 0;
 }
 
@@ -90,26 +90,86 @@ body {
 }
 
 
+/* line 73 : /Users/Robert/Sites/github/react-map/src/app/css/column.styl */
+
+/* line 1 : /Users/Robert/Sites/github/react-map/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/Robert/Sites/github/react-map/src/app/css/column.styl */
+.column .simpleGeocoder {
+  margin: 10px 0;
+}
+
+/* line 4 : /Users/Robert/Sites/github/react-map/src/app/css/column.styl */
+.column .simpleGeocoder .esriGeocoderContainer {
+  width: 100%;
+}
+
+/* line 7 : /Users/Robert/Sites/github/react-map/src/app/css/column.styl */
+.column .simpleGeocoder .esriGeocoder input {
+  width: 80%;
+}
+
+
 /* line 73 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
 
 /* line 1 : /Users/Robert/Sites/github/react-map/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 1 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+/* line 42 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+/*  Helpful Functions and Key Variables */
+
+/* line 13 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+/*  Helpful Functions and Key Variables */
+
+/* line 15 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
 .map-panel .map {
   position: relative;
   height: 100%;
   width: 100%;
 }
 
-/* line 6 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
-.map-panel .simpleGeocoder {
+/* line 20 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+.simpleGeocoder {
+  margin: 20px 0;
+}
+
+/* line 23 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+.simpleGeocoder .esriGeocoderContainer {
+  width: 100% !important;
+}
+
+/* line 26 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+.map-panel .esriSimpleSlider {
+  top: 60px;
+}
+
+/* line 29 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
+.map-panel .settings-icon {
+  background: url("images/settings-icon.png") #fff no-repeat center;
+  border: 1px solid #57585a;
+  background-size: 22px 22px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   position: absolute;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
   z-index: 50;
   left: 20px;
   top: 20px;
 }
 
-/* line 12 : /Users/Robert/Sites/github/react-map/src/app/css/map.styl */
-.map-panel .esriSimpleSlider {
-  top: 60px;
+
+/* line 73 : /Users/Robert/Sites/github/react-map/src/app/css/slide.styl */
+
+/* line 1 : /Users/Robert/Sites/github/react-map/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/Robert/Sites/github/react-map/src/app/css/slide.styl */
+.app .slide-menu .column {
+  display: none;
+}
+
+/* line 4 : /Users/Robert/Sites/github/react-map/src/app/css/slide.styl */
+.app .slide-menu.open .column {
+  display: block;
 }
