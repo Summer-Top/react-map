@@ -24,10 +24,10 @@ define([
 				panelId: 'MapPanel',
 				menuWidth: 320,
 				fps: (1000 / 60),
-				duration: 300,
+				duration: 275,
 				easing: {
 					enabled: true,
-					factor: 0.20
+					factor: 0.25
 				}
 			};
 		},

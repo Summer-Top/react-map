@@ -32,7 +32,7 @@ define([
 			self.map.on('load', function () {
 				self.map.resize();
 				self.mapLoaded();
-				//self.emit('map-ready', {});
+				self.emit('ready', {});
 			});
 
 		},
