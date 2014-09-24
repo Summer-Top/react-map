@@ -23,7 +23,7 @@ define([
 		},
 
 		launchApp: function () {
-			React.renderComponent(new App(AppConfig), document.getElementById("Application"));
+			React.renderComponent(new App(AppConfig.defaultProps), document.getElementById("Application"));
 		}
 
 	};

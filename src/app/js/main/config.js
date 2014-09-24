@@ -5,16 +5,18 @@ define([], function () {
 
 	return {
 
-		"appTitle": "Example",
-		"appSubTitle": "Testing React.js with Esri's ArcGIS JavaScript API.",
-		"appDescription": "Description of the mapping application goes here and any images from AGOL account.",
+		"defaultProps": {
+			"appTitle": "Example",
+			"appSubTitle": "Testing React.js with Esri's ArcGIS JavaScript API.",
+			"appDescription": "Description of the mapping application goes here and any images from AGOL account.",
 
-		"mapOptions": {
-			"sliderPosition": "top-left",
-			"basemap": 'gray',
-			"centerX": -97,
-			"centerY": 39,
-			"zoom": 4
+			"mapOptions": {
+				"sliderPosition": "top-left",
+				"basemap": 'gray',
+				"centerX": -97,
+				"centerY": 39,
+				"zoom": 4
+			}
 		},
 		
 		"corsEnabledServers": [
