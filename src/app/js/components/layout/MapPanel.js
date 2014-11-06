@@ -14,7 +14,7 @@ define([
 
 		render: function () {
 			return (
-				React.DOM.div({'className': 'map-panel', 'id': this.props.key },
+				React.DOM.div({'className': 'map-panel', 'id': this.props.id },
 					React.DOM.div({'className': 'map', 'id': 'map'},
 						React.DOM.div({'className': 'settings-icon', 'onClick': this.props.clickToggle })
 					)

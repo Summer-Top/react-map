@@ -87,7 +87,7 @@ module.exports = function (grunt) {
             'dispatcher': 'app/js/dispatcher',
             'components': 'app/js/components',
             // Aliases            
-            'react': 'app/libs/react-0.11.1.min/index'
+            'react': 'app/libs/react-0.12.0.min/index'
           },
           name: 'build/requireConfig',
           out: 'build/app/js/app.min.js'

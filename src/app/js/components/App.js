@@ -1,6 +1,6 @@
 /* global define */
 define([
-	"react",	
+	"react",
 	"components/layout/Body",
 	"components/layout/Header"
 ], function (React, Body, Header) {

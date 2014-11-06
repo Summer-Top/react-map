@@ -36,11 +36,11 @@ define([
 			return (
 				React.DOM.div({'className': 'slide-menu' + (this.state.menuOpen ? ' open' : ' close')},
 					new Column({
-						'key': this.props.menuId,
+						'id': this.props.menuId,
 						'description': this.props.description
 					}),
 					new MapPanel({
-						'key': this.props.panelId,
+						'id': this.props.panelId,
 						'options': this.props.options,
 						'clickToggle': this._toggle
 					})

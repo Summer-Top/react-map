@@ -1,24 +1,32 @@
 /* global window, document, location */
 (function (win, doc) {
 	'use strict';
-	var version = "2.0.0", 
-			URL = location.pathname.replace(/\/[^/]+$/, "") + 'app',
-			dojoConfig = {
+	var base = location.pathname.replace(/\/[^/]+$/, '') + 'app',
+			appVersion = '1.0',
+			esriVersion = '3.11',
+			js = [
+				'//js.arcgis.com/' + esriVersion + '/'
+			],
+			css = [
+				'http://js.arcgis.com/' + esriVersion + '/esri/css/esri.css',
+				'app/css/app.css' + '?' + appVersion
+			],
+			config = {
 				parseOnLoad: false, 
 	      isDebug: false, 
 	      async: true,
-	      cacheBust: "v=" + version,
+	      cacheBust: "v=" + appVersion,
 	      packages: [
-	      	{name: "libs", location: URL + "/libs"},
-	      	{name: "map", location: URL + "/js/map"},
-	        {name: "main", location: URL + "/js/main"},
-	        {name: "utils", location: URL + "/js/utils"},
-	        {name: "store", location: URL + "/js/store"},
-	        {name: "dispatcher", location: URL + "/js/dispatcher"},
-	        {name: "components", location: URL + "/js/components"}
+	      	{name: "libs", location: base + "/libs"},
+	      	{name: "map", location: base + "/js/map"},
+	        {name: "main", location: base + "/js/main"},
+	        {name: "utils", location: base + "/js/utils"},
+	        {name: "store", location: base + "/js/store"},
+	        {name: "dispatcher", location: base + "/js/dispatcher"},
+	        {name: "components", location: base + "/js/components"}
 	      ],
 	      aliases: [
-	      	['react', 'libs/react-0.11.1.min/index']
+	      	['react', 'libs/react-0.12.0.min/index']
 	      ],
 	      deps: [
 	      	"main/Main",
@@ -31,47 +39,36 @@
 	        // Release Version
 	        // loadScript('app/js/app.min.js');
 	      }
-			}, // End dojoConfig
-			src = 'http://js.arcgis.com/3.10/',
-			css = [
-				{ src: 'app/css/app.css', cdn: false },
-				{ src: 'http://js.arcgis.com/3.10/js/esri/css/esri.css', cdn: true }
-			];
+			};
 
-	var loadScript = function (src, attrs) {
+	var loadScript = function (src) {
 		var s = doc.createElement('script'),
 				h = doc.getElementsByTagName('head')[0];
 		s.src = src;
 		s.async = true;
-		for (var key in attrs) {
-			if (attrs.hasOwnProperty(key)) {
-				s.setAttribute(key, attrs[key]);
-			}
-		}
 		h.appendChild(s);	
 	};
 
 	var loadStyle = function (src, isCDN) {
 		var l = doc.createElement('link'),
-				path = isCDN ? src : src + "?v=" + version,
 				h = doc.getElementsByTagName('head')[0];
-	    
-	  l.rel = "stylesheet";
-	  l.type = 'text/css';
-	  l.href = path;
-	  l.media = "only x";
-	  h.appendChild(l);
-	  setTimeout(function () {
-    	l.media = "all";
-    });
+
+    l.rel = 'stylesheet';
+    l.type = 'text/css';
+    l.href = src;
+    h.appendChild(l);
 	};
 
-	var loadDependencies = function () {
-		win.dojoConfig = dojoConfig;
-		loadScript(src);
-		var i, length;
-		for (i = 0, length = css.length; i < length; i++) {
-			loadStyle(css[i].src, css[i].cdn);
+	var launch = function () {
+		// Load CSS
+		for (var i = 0; i < css.length; i++) {
+			loadStyle(css[i]);
+		}
+		// Setup Dojo Config
+		win.dojoConfig = config;
+		// Load JavaScript
+		for (var j = 0; j < js.length; j++) {
+			loadScript(js[j]);
 		}
 	};
 
@@ -84,11 +81,11 @@
   })();
 
   if (win.requestAnimationFrame) {
-    win.requestAnimationFrame(loadDependencies);
+    win.requestAnimationFrame(launch);
   } else if (doc.readyState === "loaded") {
-    loadDependencies();
+    launch();
   } else {
-    win.onload = loadDependencies;
+    win.onload = launch;
   }
 
 })(window, document);
