@@ -16,7 +16,7 @@ define([
 						'subtitle': this.props.appSubTitle
 					}),
 					new Body({
-						'description': this.props.appDescription,
+						'columnDescription': this.props.columnDescription,
 						'mapOptions': this.props.mapOptions
 					})
 				)

@@ -37,7 +37,7 @@ define([
 				React.DOM.div({'className': 'slide-menu' + (this.state.menuOpen ? ' open' : ' close')},
 					new Column({
 						'id': this.props.menuId,
-						'description': this.props.description
+						'description': this.props.columnDescription
 					}),
 					new MapPanel({
 						'id': this.props.panelId,

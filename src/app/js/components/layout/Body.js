@@ -11,7 +11,7 @@ define([
 			return (
 				React.DOM.div({'className': 'body'},
 					new SlideMenu({
-						'description': this.props.description,
+						'columnDescription': this.props.columnDescription,
 						'options': this.props.mapOptions
 					})
 				)

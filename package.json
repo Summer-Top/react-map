@@ -7,14 +7,17 @@
 	],
 	"devDependencies": {},
 	"dependencies": {
-		"grunt": "^0.4.5",
-    "grunt-contrib-copy": "^0.5.0",    
-    "grunt-contrib-htmlmin": "^0.3.0",
-    "grunt-contrib-imagemin": "^0.3.0",
-    "grunt-contrib-uglify": "^0.5.0",
-    "grunt-contrib-requirejs": "~0.4.4",
-    "grunt-contrib-stylus": "^0.18.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-ftp-push": "^0.2.4"
+		"browser-sync": "^1.6.5",
+    "del": "^0.1.3",
+    "glob": "^4.0.6",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.1",
+    "gulp-htmlmin": "^0.2.0",
+    "gulp-imagemin": "^1.2.1",
+    "gulp-print": "^1.1.0",
+    "gulp-stylus": "^1.3.4",
+    "gulp-uglify": "^1.0.1",
+    "gulp-watch": "^1.1.0",
+    "requirejs": "^2.1.15"
 	}
 }

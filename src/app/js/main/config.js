@@ -8,7 +8,7 @@ define([], function () {
 		"defaultProps": {
 			"appTitle": "Example",
 			"appSubTitle": "Testing React.js with Esri's ArcGIS JavaScript API.",
-			"appDescription": "Description of the mapping application goes here and any images from AGOL account.",
+			"columnDescription": "Place some tools or content here.",
 
 			"mapOptions": {
 				"sliderPosition": "top-left",

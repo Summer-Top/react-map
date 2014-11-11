@@ -20,13 +20,10 @@
 	      	{name: "libs", location: base + "/libs"},
 	      	{name: "map", location: base + "/js/map"},
 	        {name: "main", location: base + "/js/main"},
-	        {name: "utils", location: base + "/js/utils"},
-	        {name: "store", location: base + "/js/store"},
-	        {name: "dispatcher", location: base + "/js/dispatcher"},
 	        {name: "components", location: base + "/js/components"}
 	      ],
 	      aliases: [
-	      	['react', 'libs/react-0.12.0.min/index']
+	      	['react', 'http://fb.me/react-0.12.0.min.js']
 	      ],
 	      deps: [
 	      	"main/Main",
