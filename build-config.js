@@ -4,6 +4,16 @@ module.exports = {
 		'src': 'src/**/*.html',
 		'dest': 'build'
 	},
+	browserSync: {   
+    // server: {
+    //   baseDir: "src"
+    // },
+    proxy: "localhost",
+    files: [
+      'src/app/**/*.css',
+      'src/app/**/*.js'
+    ]
+  },
 	uglify: {
 		'src': 'src/app/bootloader.js',
 		'dest': 'build/app'
@@ -17,7 +27,8 @@ module.exports = {
 		'libs': {'src': 'src/app/libs/*.js', 'dest': 'build/app/libs'}
 	},
 	stylus: {
-		'src': 'src/app/css/**/*.styl',
+		'watch': 'src/app/css/**/*.styl',
+		'src': 'src/app/css/app.styl',
 		'dest': 'build/app/css',
 		'devOut': 'src/app/css'
 	},
