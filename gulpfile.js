@@ -66,7 +66,7 @@ gulp.task('optimize', function () {
 });
 
 gulp.task('stylus-watch', function () {
-  gulp.watch(config.stylus.src, ['stylus-dev']);
+  gulp.watch(config.stylus.watch, ['stylus-dev']);
 });
 
 gulp.task('copy', ['copy-libs', 'copy-access']);
